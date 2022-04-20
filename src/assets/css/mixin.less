@@ -1,0 +1,62 @@
+@import "./variable.less";
+
+// 主要背景颜色
+.bg_color(){
+  [data-theme=light] & {
+    background: @background-color-light;
+  }
+  [data-theme=dark] & {
+    background: @background-color-dark;
+  }
+}
+
+// 主要文字颜色
+.font_color(){
+  [data-theme=light] & {
+    color: @font-color-light;
+  }
+  [data-theme=dark] & {
+    color: @font-color-dark;
+  }
+}
+
+// 次要背景颜色
+.bg_sub_color(){
+  background: $background-color-sub-theme;
+  [data-theme=theme1] & {
+    background: $background-color-sub-theme1;
+  }
+  [data-theme=theme2] & {
+    background: $background-color-sub-theme2;
+  }
+}
+
+.flex_start_center(){
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.position_Y_center(){
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// 不换行
+.no-wrap(){
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// 限制行数
+.clamp($row){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $row;
+}
+
+
