@@ -8,27 +8,37 @@
       <el-switch @change="themeChange" :value="theme" active-value="light" inactive-value="dark" active-color="#303133" inactive-color="#CCC"></el-switch>
     </el-header>
     <el-main class="main">
+      <transition appear enter-active-class="animate__animated animate__fadeInLeft animate__delay-2s">
       <div class="left">
-        <div class="cursor-pointer">
-          <img src="../../public/assets/logo.png" style="width: 50px; height: 50px;">
-          <span>XiaopAdmin</span>
-        </div>
-        <div>
-          <img src="../../public/assets/login-box-bg.svg" style="width: 50%">
-        </div>
+          <div class="cursor-pointer">
+            <img src="../../public/assets/logo.png" style="width: 50px; height: 50px;">
+            <span>XiaopAdmin</span>
+          </div>
+          <div>
+            <img src="../../public/assets/login-box-bg.svg" style="width: 50%">
+          </div>
       </div>
+      </transition>
       <div class="right">
         <div class="login-box">
-          <div class="title">登录</div>
+          <transition appear enter-active-class="animate__animated animate__fadeInRight">
+            <div class="title">登录</div>
+          </transition>
           <el-form ref="loginForm" :model="loginForm">
             <el-form-item>
-              <el-input v-model="loginForm.username"></el-input>
+              <transition appear enter-active-class="animate__animated animate__fadeInRight animate__delay-1s">
+                <el-input v-model="loginForm.username"></el-input>
+              </transition>
             </el-form-item>
             <el-form-item>
-              <el-input v-model="loginForm.password"></el-input>
+              <transition appear enter-active-class="animate__animated animate__fadeInRight animate__delay-2s">
+                <el-input v-model="loginForm.password"></el-input>
+              </transition>
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" style="width: 100%">登录</el-button>
+              <transition appear enter-active-class="animate__animated animate__fadeInRight animate__delay-3s">
+                <el-button type="primary" style="width: 100%">登录</el-button>
+              </transition>
             </el-form-item>
           </el-form>
         </div>
@@ -117,6 +127,7 @@ export default {
     }
     .right{
       width: 50%;
+      overflow: hidden;
       .flex_start_center();
       .login-box{
         width: 50%;
@@ -158,5 +169,8 @@ export default {
       width: 100% !important;
     }
   }
+}
+:root {
+  --animate-delay: 0.1s;
 }
 </style>
