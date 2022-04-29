@@ -5,6 +5,8 @@ import store from './store'
 // 导入element组件库
 import '@/plugins/element.js'
 import 'element-ui/lib/theme-chalk/index.css'
+// 导入字体图标
+import '@/assets/fonts/iconfont.css'
 // 导入全局样式表
 import '@/assets/css/base.less'
 

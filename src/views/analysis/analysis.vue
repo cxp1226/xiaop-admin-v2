@@ -1,12 +1,13 @@
 <template>
-  <div class="home">
-    主页
+  <div>
+    首页
   </div>
 </template>
 
 <script>
+
 export default {
-  name: 'myHome'
+  name: 'analysis'
 }
 </script>
 

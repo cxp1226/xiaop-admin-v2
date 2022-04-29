@@ -1,7 +1,7 @@
 <template>
   <el-container class="login">
-    <el-header class="header justify-end align-center">
-      <div class="logo cursor-pointer">
+    <el-header class="header">
+      <div class="logo">
         <img src="../../public/assets/logo.png" style="width: 50px; height: 50px;">
         <span>XiaopAdmin</span>
       </div>
@@ -10,7 +10,7 @@
     <el-main class="main">
       <transition appear enter-active-class="animate__animated animate__fadeInLeft animate__delay-2s">
       <div class="left">
-          <div class="cursor-pointer">
+          <div>
             <img src="../../public/assets/logo.png" style="width: 50px; height: 50px;">
             <span>XiaopAdmin</span>
           </div>
@@ -60,10 +60,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['theme'])
+    ...mapGetters('systemSetting', ['theme'])
   },
   methods: {
-    ...mapActions(['setTheme']),
+    ...mapActions('systemSetting', ['setTheme']),
     // 主题切换
     themeChange (theme) {
       this.setTheme(theme)
@@ -74,6 +74,7 @@ export default {
 
 <style scope lang="less">
 @import "@/assets/css/mixin.less";
+@import "@/assets/css/common.less";
 .bg_image(){
   [data-theme=light] & {
     background-image: url(/public/assets/login-bg.svg);
@@ -81,7 +82,7 @@ export default {
   }
   [data-theme=dark] & {
     background-image: url(/public/assets/login-bg-dark.svg);
-    background-color: @background-color-sub-dark;
+    background-color: @background-color-h1-dark;
   }
 }
 .login {
@@ -92,10 +93,12 @@ export default {
   background-repeat: no-repeat;
   background-size: 300% 100%;
   .header{
+    .flex_end_center();
     .logo{
       display: none;
       font-size: 26px;
       font-weight: bold;
+      cursor: pointer;
       >span{
         margin-left: 20px;
       }
@@ -115,6 +118,7 @@ export default {
         font-size: 30px;
         font-weight: bold;
         color: #FFF;
+        cursor: pointer;
         .flex_start_center();
         >span{
           margin-left: 20px;
@@ -122,7 +126,9 @@ export default {
       }
       div:nth-child(2){
         width: 100%;
-        .position_Y_center();
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
     .right{

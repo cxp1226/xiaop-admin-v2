@@ -10,6 +10,25 @@
   }
 }
 
+// 一级背景颜色
+.bg_h1_color(){
+  [data-theme=light] & {
+    background: @background-color-light;
+  }
+  [data-theme=dark] & {
+    background: @background-color-h1-dark;
+  }
+}
+// 二级背景颜色
+.bg_h2_color(){
+  [data-theme=light] & {
+    background: @background-color-light;
+  }
+  [data-theme=dark] & {
+    background: @background-color-h2-dark;
+  }
+}
+
 // 主要文字颜色
 .font_color(){
   [data-theme=light] & {
@@ -20,27 +39,40 @@
   }
 }
 
-// 次要背景颜色
-.bg_sub_color(){
-  background: $background-color-sub-theme;
-  [data-theme=theme1] & {
-    background: $background-color-sub-theme1;
+// 一级文字颜色
+.font_h1_color(){
+  [data-theme=light] & {
+    color: @font-color-light;
   }
-  [data-theme=theme2] & {
-    background: $background-color-sub-theme2;
+  [data-theme=dark] & {
+    color: @font-color-h1-dark;
   }
 }
-
-.flex_start_center(){
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+// 二级文字颜色
+.font_h2_color(){
+  [data-theme=light] & {
+    color: @font-color-light;
+  }
+  [data-theme=dark] & {
+    color: @font-color-h2-dark;
+  }
 }
-
-.position_Y_center(){
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+.border_color(){
+  [data-theme=light] & {
+    border-color: @border-color-light;
+  }
+  [data-theme=dark] & {
+    border-color: @border-color-dark;
+  }
+}
+// hover背景色
+.hover_bg(){
+  [data-theme=light] &:hover{
+      background-color: @hover-color-light;
+  }
+  [data-theme=dark] &:hover{
+      background-color: @hover-color-dark;
+  }
 }
 
 // 不换行
@@ -59,4 +91,20 @@
   -webkit-line-clamp: $row;
 }
 
-
+// 边框
+.border(Top, @width){
+  .border_color();
+  border-top: @width solid;
+}
+.border(Right, @width){
+  .border_color();
+  border-right: @width solid;
+}
+.border(Bottom, @width){
+  .border_color();
+  border-bottom: @width solid;
+}
+.border(Left, @width){
+  .border_color();
+  border-left: @width solid;
+}

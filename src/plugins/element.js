@@ -32,6 +32,8 @@ import {
   RadioGroup,
   RadioButton,
   Upload,
+  Drawer,
+  Avatar,
   Message,
   MessageBox
 } from 'element-ui'
@@ -68,6 +70,8 @@ Vue.use(Rate)
 Vue.use(RadioGroup)
 Vue.use(RadioButton)
 Vue.use(Upload)
+Vue.use(Drawer)
+Vue.use(Avatar)
 
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
