@@ -49,19 +49,26 @@ export default {
 <style scope lang="less">
 @import "@/assets/css/mixin.less";
 @import "@/assets/css/common.less";
+.main_bg(){
+  [data-theme=light] & {
+    background-color: #F0F2F5;
+  }
+}
 .home {
   width: 100%;
   height: 100%;
   .aside{
-    // background-color: #fbbd08;
+    .border(Right, 1px);
   }
   .header{
     height: 50px !important;
     padding: 0;
+    .border(Bottom, 1px);
   }
   .main {
     position: relative;
-    background-color: #a5673f;
+    padding: 0;
+    .main_bg();
   }
   .el-drawer{
     .bg_h1_color();

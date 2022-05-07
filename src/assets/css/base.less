@@ -7,17 +7,22 @@ html, body, #app{
   height: 100%;
 }
 .el-input__inner{
-  .bg_color(){
-    transition: all .3s;
-    [data-theme=light] & {
-      background: @background-color-light;
-    }
-    [data-theme=dark] & {
-      background: #232A3B;
-      color: @font-color-h1-dark;
-    }
+  transition: all .3s;
+  [data-theme=light] & {
+    background: @background-color-light;
   }
-  .bg_color();
+  [data-theme=dark] & {
+    background: #232A3B;
+    color: @font-color-h1-dark;
+  }
+}
+.el-form-item__label{
+  [data-theme=light] & {
+    background: @background-color-light;
+  }
+  [data-theme=dark] & {
+    color: @font-color-h1-dark;
+  }
 }
 /* All animations will take twice as long to finish */
 :root {
